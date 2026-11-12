@@ -130,3 +130,12 @@ main{flex:1 0 auto}
 .hero-show img.on{opacity:1}
 @media (min-width:900px){.hero-split:has(.hero-show:not([hidden])){grid-template-columns:1.25fr 1fr;text-align:left}.hero-split:has(.hero-show:not([hidden])) .hero-text{align-items:flex-start}}
 @media (prefers-reduced-motion:reduce){.hero-show img{transition:none}}
+
+/* Brand tagline and slideshow caption */
+.brand-tag{flex-basis:100%;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:16px;letter-spacing:.02em;color:#C9A97A;line-height:1.2}
+.hero-media{display:flex;flex-direction:column;align-items:center;gap:12px}
+.hero-media .hero-show{justify-self:auto}
+.media-caption{margin:0;max-width:300px;text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:18px;line-height:1.4;color:#C9A97A}
+.hero-show[hidden]+.media-caption{display:none}
+.hero-split:has(.hero-show[hidden]){grid-template-columns:1fr}
+@media (max-width:600px){.brand-tag{font-size:14px;text-align:center}}
