@@ -170,3 +170,34 @@
   modal.addEventListener('click', function (e) { if (e.target === modal) closePanel(); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) closePanel(); });
 })();
+
+// ---- Hero slideshow: /slide-01.jpg ... /slide-20.jpg, one second each
+(function () {
+  var box = document.getElementById('hero-show');
+  if (!box) return;
+  var CODES = 'DfKZuuchCng DemxYNfOUtu Dee5olPN9aK DfpNFS3u0_Z DfkhAEEtVbr DfaBeQOuiJ7 DfXNVYQALgv DfU_7i2lhBz DfSkPLGuTka DdPclLDtBSl DfApDfduIdq DfPwPULs_tW DfSL2o7hSs5 DeXIpMzxPXb DfCbVHwgREI De_yWSHh29O DfFigjuBqUJ De9j9NYPm5M Deuxcewut9S Deua6wgJ7Xn'.split(' ');
+  var N = CODES.length, shown = [], loaded = 0, done = 0;
+  for (var i = 1; i <= N; i++) {
+    (function (src) {
+      var img = new Image();
+      img.alt = '';
+      img.onload = function () { shown.push(img); box.appendChild(img); finish(); };
+      img.onerror = finish;
+      img.src = src;
+    })('/api/ig?c=' + CODES[i - 1]);
+  }
+  var started = false;
+  function finish() {
+    done++;
+    if (!started && shown.length) { started = true; box.hidden = false; shown[0].classList.add('on'); run(); }
+  }
+  function run() {
+    var k = 0;
+    setInterval(function () {
+      if (shown.length < 2) return;
+      shown[k % shown.length].classList.remove('on');
+      k = (k + 1) % shown.length;
+      shown[k].classList.add('on');
+    }, 1000);
+  }
+})();
