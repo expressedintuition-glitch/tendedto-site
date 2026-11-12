@@ -1,0 +1,16 @@
+{
+ "name": "Tended To by Tai",
+ "short_name": "Tended To",
+ "description": "Holistic skincare in Jacksonville, FL. Book facials, waxing and body treatments.",
+ "start_url": "/",
+ "display": "standalone",
+ "background_color": "#0A0B09",
+ "theme_color": "#0A0B09",
+ "icons": [
+  {
+   "src": "/icon.png",
+   "sizes": "120x120",
+   "type": "image/png"
+  }
+ ]
+}
