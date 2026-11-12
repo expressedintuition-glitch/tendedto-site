@@ -144,3 +144,9 @@ main{flex:1 0 auto}
 .cat-tile{min-height:0;padding:16px 20px;align-items:center;justify-content:center;text-align:center;gap:0}
 .cat-tile .name{font-size:24px;line-height:1.15}
 .cat-tile .count{display:none}
+
+/* Compact tiles sized to their words, centered row */
+.cat-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
+.cat-tile{flex:0 0 auto;min-width:150px;padding:14px 26px}
+.cat-tile:active{transform:scale(1.125) translateY(-4px);z-index:2;border-color:#C9A97A;background-color:rgba(31,77,46,.7);box-shadow:0 22px 48px rgba(0,0,0,.65),0 0 24px rgba(201,169,122,.25)}
+@media (max-width:600px){.cat-tile{min-width:calc(50% - 7px);padding:14px 12px}.cat-tile .name{font-size:22px}}

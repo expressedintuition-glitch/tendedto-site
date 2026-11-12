@@ -23,8 +23,8 @@
   var CATEGORIES = [
     { key: 'Facials', label: 'Facials' },
     { key: 'Waxing', label: 'Waxing' },
-    { key: 'Body & Massage', label: 'Body & Massage' },
-    { key: 'Packages', label: 'Packages & Subscriptions' }
+    { key: 'Body & Massage', label: 'Massage' },
+    { key: 'Packages', label: 'Packages' }
   ];
 
   var PICKS = [
@@ -200,3 +200,6 @@
     }, 2000);
   }
 })();
+
+// lets phones show the pop effect while a finger is on a tile
+document.addEventListener('touchstart', function () {}, { passive: true });
