@@ -150,3 +150,12 @@ main{flex:1 0 auto}
 .cat-tile{flex:0 0 auto;min-width:150px;padding:14px 26px}
 .cat-tile:active{transform:scale(1.125) translateY(-4px);z-index:2;border-color:#C9A97A;background-color:rgba(31,77,46,.7);box-shadow:0 22px 48px rgba(0,0,0,.65),0 0 24px rgba(201,169,122,.25)}
 @media (max-width:600px){.cat-tile{min-width:calc(50% - 7px);padding:14px 12px}.cat-tile .name{font-size:22px}}
+
+/* Top performers: description on tap */
+.pick-info{padding:10px 0 14px;border-bottom:1px solid #2A2A23;display:flex;flex-direction:column;gap:10px}
+.pick-info[hidden]{display:none}
+.pick-info p{margin:0;font-size:14px;line-height:1.55;color:#BDB5A5}
+.pick-book{all:unset;cursor:pointer;align-self:flex-start;min-height:40px;display:inline-flex;align-items:center;padding:0 18px;background:#C9A97A;color:#0C0C0B;font-size:12px;font-weight:600;letter-spacing:.16em}
+.pick-book:hover{background:#E6CFA6}
+.pick-book:focus-visible{outline:2px solid #E6CFA6;outline-offset:2px}
+.pick-btn[aria-expanded="true"]{border-bottom-color:transparent}

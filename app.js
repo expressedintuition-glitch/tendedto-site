@@ -103,8 +103,21 @@
       b.type = 'button';
       b.appendChild(el('span', 'n', s.name));
       b.appendChild(el('span', 'p', '(' + s.time + ') ' + s.price));
-      b.addEventListener('click', function () { openPanel(s, b); });
+      b.setAttribute('aria-expanded', 'false');
+      var info = el('div', 'pick-info');
+      info.hidden = true;
+      info.appendChild(el('p', null, s.desc));
+      var book = el('button', 'pick-book', 'Book this service →');
+      book.type = 'button';
+      book.addEventListener('click', function () { openPanel(s, book); });
+      info.appendChild(book);
+      b.addEventListener('click', function () {
+        var open = info.hidden;
+        info.hidden = !open;
+        b.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
       wrap.appendChild(b);
+      wrap.appendChild(info);
     });
     card.appendChild(wrap);
     picks.appendChild(card);
