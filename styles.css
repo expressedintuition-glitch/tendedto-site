@@ -139,3 +139,8 @@ main{flex:1 0 auto}
 .hero-show[hidden]+.media-caption{display:none}
 .hero-split:has(.hero-show[hidden]){grid-template-columns:1fr}
 @media (max-width:600px){.brand-tag{font-size:14px;text-align:center}}
+
+/* Streamlined category tiles */
+.cat-tile{min-height:0;padding:16px 20px;align-items:center;justify-content:center;text-align:center;gap:0}
+.cat-tile .name{font-size:24px;line-height:1.15}
+.cat-tile .count{display:none}

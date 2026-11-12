@@ -59,7 +59,6 @@
     b.setAttribute('aria-pressed', 'false');
     b.setAttribute('aria-controls', 'svc-list');
     b.appendChild(el('span', 'name', c.label));
-    b.appendChild(el('span', 'count', count + ' SERVICES'));
     b.addEventListener('click', function () { toggle(c.key, b); });
     grid.appendChild(b);
   });
