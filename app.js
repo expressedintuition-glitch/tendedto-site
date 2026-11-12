@@ -198,6 +198,6 @@
       shown[k % shown.length].classList.remove('on');
       k = (k + 1) % shown.length;
       shown[k].classList.add('on');
-    }, 1500);
+    }, 2000);
   }
 })();
